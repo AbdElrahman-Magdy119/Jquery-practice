@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        td {
+            border: 1px solid black;;
+        }
+    </style>
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+           
+        $(function () {
+                  
+            var counter=0;
+            $('input:eq(0)').click(async function () {
+
+                 if(counter == 0)
+                 {
+                let postsData = await fetch('https://jsonplaceholder.typicode.com/posts')
+                let postJson = await postsData.json()
+                  console.log(postJson)
+
+                for(let post of postJson) {
+                    let createdrecords = $(`
+                                <tr>
+                                    <td>${post.id}</td>
+                                    <td>${post.title}</td>
+                                    <td>${post.body}</td>
+                                </tr>
+                            `)
+                          $('table').append(createdrecords) 
+                            
+                }
+            }
+              counter++;
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="loadFetchAPI">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+    </table>
+</body>
+</html>

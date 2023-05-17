@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .hover {
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #000;
+            border: 1px solid #000;
+            cursor: pointer;
+        } */
+        div {
+            height: 150px;
+            width: 150px;
+            background-color: pink;
+            position: relative;
+            /* border: 1px solid #000; */
+            border-radius: 10px;
+        }
+    </style>
+    <script src="jquery-3.6.3.js"></script>
+    <script>
+        //jQuery-2.3.6.min.js & jQuery-2.3.6.js
+
+        // window.addEventListener('load', function () {
+        //     $('p').css('background-color','red')
+        // })
+
+        // onload = function () {
+        //     $('p').css('background-color','red')
+        // }
+
+        // $  and jQuery are objects $. jQuery.
+
+        // window.addEventListener('load', function () {
+        // var allpara = document.getElementsByTagName('p')
+        // for (let i = 0; i < allpara.length; i++) {
+        //     allpara[i].style.display = 'none'
+        // }
+
+        // for (let i = 0; i < allpara.length; i++) {
+        //     allpara[i].style.display = 'block'
+        // }
+        //write less do more
+        //any valid css selector is a valid jquery selector
+        //     $('p').hide(2000).show(2000)
+        // })
+
+        // $(document).ready(function () {
+        //     $('p').hide(2000).show(2000)
+        // })
+
+        $(function () {
+            // $('p:nth-child(odd)').css('background-color', 'red')
+
+            //filters :eq - :lt - :gt - :empty - :parent
+            // $('div:parent:has(p)').css('background-color', 'red')
+            // $('div:empty:first').css('width', '200px')
+            // $('div:empty:first').css('height', '200px')
+            //has => (tag name selector) & contains => (text | case sensitive)
+
+            // var paraThree = {
+            //     backgroundColor: 'red',
+            //     height: '100px'
+            // }
+
+            // var liStyle = {
+            //     backgroundColor: 'red',
+            //     padding: '10px',
+            //     margin: '10px',
+            //     color: 'white',
+            //     borderRadius: '10px',
+            // }
+
+            // $('p:contains(Three)').css(paraThree)
+            // $('p:contains(two)').css(paraThree)
+
+            // $(':input:first').css(paraThree)
+
+            //****************************************************************
+
+            //JS is browser dependent & jQuery is browser independent
+            //intro to events
+            // $('li').click(function () {
+            //     $(this).addClass('hover');
+            // })
+
+            // $('li').mouseover(function () {
+            //     $(this).addClass('hover');
+            // })
+
+            // $('li').mouseout(function () {
+            //     $(this).removeClass('hover');
+            // })
+
+            // $('li').hover(function () {
+            //     $(this).addClass('hover');
+            // }, function () {
+            //     $(this).removeClass('hover');
+            // })
+
+            // $('li').hover(function () {
+            //     $(this).toggleClass('hover');
+            // })
+
+            //****************************************************************
+
+
+            // html() - text() - val()
+
+            // $(':input:first').click(function () {
+            //     $('div').html($('textarea').val())
+            // })
+
+            //****************************************************************
+
+            //attr() - prop()
+
+            //filter() and each()
+
+            // var matchedDivs = $('div').filter(function () {
+            //     return $(this).width() > 120
+            // })
+
+            // matchedDivs.each(function () {
+            //     $(this).css('background-color', 'red')
+            // })
+
+            //how to apply animations and effects to html elements using jQuery
+
+            // $(':input:eq(0)').click(function () {
+            //     $('div').hide(2000)
+            // })
+
+            // $(':input:eq(1)').click(function () {
+            //     $('div').show(2000)
+            // })
+
+            // $(':input:eq(2)').click(function () {
+            //     $('div').slideUp(2000)
+            // })
+
+            // $(':input:eq(3)').click(function () {
+            //     $('div').slideDown(2000)
+            // })
+
+            // $(':input:eq(4)').click(function () {
+            //     $('div').slideToggle(2000)
+            // })
+
+            // $(':input:eq(5)').click(function () {
+            //     $('div').fadeIn(2000)
+            // })
+
+            // $(':input:eq(6)').click(function () {
+            //     $('div').fadeOut(2000)
+            // })
+
+            // $(':input:eq(7)').click(function () {
+            //     $('div').fadeToggle(2000)
+            // })
+
+            //animate({}, options)
+
+            var increaseDiv = {
+                left: '+=20px',
+                top: '+=20px',
+                width: '+=20px',
+                height: '+=20px'
+            }
+            var decreaseDiv = {
+                left: '-=20px',
+                top: '-=20px',
+                width: '-=20px',
+                height: '-=20px'
+            }
+
+            $(':input:eq(0)').click(function () {
+                $('div').animate(increaseDiv, 2000)
+            })
+
+            $(':input:eq(1)').click(function () {
+                $('div').animate(decreaseDiv, 2000)
+            })
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <input type="button" value=">>">
+    <input type="button" value="<<"><br><br>
+    <!-- <input type="button" value="slideup">
+    <input type="button" value="slidedown">
+    <input type="button" value="slidetoggle">
+    <input type="button" value="fadein">
+    <input type="button" value="fadeout">
+    <input type="button" value="fadetoggle"><br><br> -->
+    <div></div>
+    <!-- <img src="bird.jpg" alt=""> -->
+
+    <!-- <table>
+        <tr>
+            <td>Serial</td>
+            <td>Name</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>ahmed</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>moustafa</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>karim</td>
+        </tr>
+    </table>
+    <p class="iti">P one</p>
+    <p id="paratwo">P two</p>
+    <p class="iti">P Three</p>
+    <p class="iti">P three</p>
+    <p>P four</p>
+    <div>
+        <p>ITI New Capital</p>
+        <p>ITI New Capital</p>
+        <p>ITI New Capital</p>
+        <span>mahmoud</span>
+    </div>
+    <div></div>
+    <div></div>
+    <ul>
+        <li>UL-1Li</li>
+        <li>UL-2Li</li>
+        <li>UL-3Li</li>
+        <li>UL-4Li</li>
+        <li>UL-5Li</li>
+    </ul>
+    <div>
+        <h1>Just Header</h1>
+    </div>
+    <ol>
+        <li>OL-1Li</li>
+        <li>OL-2Li</li>
+        <li>OL-3Li</li>
+        <li>OL-4Li</li>
+        <li>OL-5Li</li>
+    </ol>
+    <form>
+        <input type="text"><br>
+        <input type="password"><br>
+        <input type="text"><br>
+    </form> -->
+
+
+
+
+
+    <!-- <form>
+        <input type="button" value="<<">
+        <input type="button" value=">>">
+    </form><br>
+    <div></div> -->
+
+    <!-- <img src="bird.jpg" alt=""><br>
+    <img src="he.jpg" alt=""><br>
+    <input type="checkbox" name="" id=""> select
+    <pre>
+
+
+
+
+
+    </pre> -->
+    <!-- <div style="width: 400px;"></div>
+    <div style="width: 100px;"></div>
+    <div style="width: 150px;"></div> -->
+
+
+    <!-- <input type="button" value="Run">
+    <textarea id="" cols="30" rows="10"></textarea>
+    <div>
+        ITI New Capital
+        <p>ITI New Capital</p>
+        <p>ITI New Capital</p>
+    </div><br>
+    <form>
+        <input type="text" value="mahmoud">
+    </form>
+    <pre>
+
+
+
+
+
+    </pre> -->
+
+    <!-- <script>
+    var i = 0
+ </script>    -->
+</body>
+
+</html>
